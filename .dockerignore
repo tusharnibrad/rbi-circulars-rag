@@ -1,6 +1,0 @@
-venv/
-.git/
-.env
-__pycache__/
-*.pyc
-data/raw_pdfs/

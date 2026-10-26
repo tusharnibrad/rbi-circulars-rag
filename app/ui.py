@@ -3,6 +3,7 @@
 Run locally:   streamlit run app\\ui.py
 Secrets:       GEMINI_API_KEY (in .env locally; as a "secret" on Streamlit Cloud / Hugging Face)
 """
+import os
 import sys
 import time
 from collections import OrderedDict
@@ -24,6 +25,15 @@ EXAMPLES = [
 ]
 
 st.set_page_config(page_title="RBI Circulars Q&A", page_icon="🏦", layout="wide")
+
+# On Streamlit Community Cloud the key lives in "Secrets", not in a .env file. Copy it into the
+# environment so answer.py (which reads os.environ) works the same locally and in the cloud.
+for _key in ("GEMINI_API_KEY", "GEMINI_MODELS"):
+    if _key not in os.environ:
+        try:
+            os.environ[_key] = str(st.secrets[_key])
+        except Exception:   # no secrets file locally: .env is used instead
+            pass
 
 
 @st.cache_resource(show_spinner="Loading search models (first run only, ~30 s)...")

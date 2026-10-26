@@ -1,0 +1,5 @@
+# Everything needed to rebuild data/ from the PDFs and to run the evaluation.
+-r requirements.txt
+pymupdf
+pytesseract
+opencv-python-headless

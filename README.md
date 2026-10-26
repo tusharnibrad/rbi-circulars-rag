@@ -1,19 +1,11 @@
----
-title: RBI Circulars Q&A
-emoji: 🏦
-colorFrom: blue
-colorTo: indigo
-sdk: docker
-app_port: 7860
-pinned: false
----
-
 # RBI Circulars Q&A (RAG with citations)
 
 Ask questions about RBI regulations (KYC, Digital Lending, Priority Sector Lending) and get an answer
 that **cites the exact passages** it used, and **flags withdrawn documents**.
 
-**Live demo:** _TODO: paste your Hugging Face Space link here_
+**Live demo:** _TODO: paste your Streamlit Community Cloud link here (https://....streamlit.app)_
+
+_Free-tier note: the app sleeps after 12 hours without visitors and wakes in about a minute. Answers depend on Google's free Gemini quota, so it can occasionally be busy._
 
 ![demo](docs/demo.gif)  <!-- TODO: record a short GIF of one question, save as docs/demo.gif -->
 
@@ -72,20 +64,21 @@ Design decisions
 - Excluding annex chunks changed nothing (tried, no effect).
 - No scanned PDFs are in the current corpus: the OCR fallback exists and runs on pages with almost no text layer
   (2 such pages here) but has not been evaluated on real scans.
-- Latency on a laptop CPU: about 9 s end to end for one measured question (search 4.6 s, Gemini 4.2 s). Single measurement.
+- Latency on a laptop CPU: 9.1 s and 5.7 s end to end for two measured questions (search 4.6 s and 1.9 s, Gemini 4.2 s and 3.8 s). Only two measurements.
 
 ## Run locally
 ```bash
 python -m venv venv && venv\Scripts\activate          # Windows
-python -m pip install -r requirements.txt
+python -m pip install -r requirements-pipeline.txt     # app + pipeline libraries
 # put your key in .env:  GEMINI_API_KEY=...   and   GEMINI_MODELS=gemini-flash-lite-latest,gemini-3.8-flash
-python src/ingest.py && python src/chunk.py && python src/index.py     # build (PDFs go in data/raw_pdfs/)
+python src/ingest.py && python src/chunk.py && python src/index.py     # rebuild (PDFs go in data/raw_pdfs/)
 python eval/run_eval.py --modes hybrid --rerank --prefer-current --label demo   # evaluation
 python -m streamlit run app/ui.py
 ```
+The processed data and indexes are committed, so `streamlit run app/ui.py` works right after `pip install -r requirements.txt`.
 
 ## Repo layout
 `src/` pipeline (ingest, chunk, index, retrieve, answer) · `app/ui.py` Streamlit app · `eval/` questions and runner ·
-`data/processed`, `data/index` prebuilt artifacts · `Dockerfile` for Hugging Face Spaces.
+`data/processed`, `data/index` prebuilt artifacts · `requirements.txt` (app) and `requirements-pipeline.txt` (rebuild + eval).
 
 _Educational project. Not legal advice: verify rules on rbi.org.in. Sources are public RBI documents._

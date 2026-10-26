@@ -1,11 +1,10 @@
-pymupdf
-pytesseract
-opencv-python
+# Runtime dependencies of the deployed app (Streamlit Community Cloud reads this file).
+# Rebuilding the data from PDFs needs extra libraries: see requirements-pipeline.txt
+streamlit
 sentence-transformers
 faiss-cpu
 rank-bm25
 google-genai
 python-dotenv
-fastapi
-uvicorn
-streamlit
+numpy
+
