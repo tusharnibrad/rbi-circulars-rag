@@ -1,0 +1,11 @@
+pymupdf
+pytesseract
+opencv-python
+sentence-transformers
+faiss-cpu
+rank-bm25
+google-genai
+python-dotenv
+fastapi
+uvicorn
+streamlit

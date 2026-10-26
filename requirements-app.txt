@@ -1,0 +1,9 @@
+# Runtime dependencies for the deployed app (the pipeline-only libraries such as pymupdf,
+# pytesseract and opencv are not needed here: the indexes are prebuilt and committed).
+sentence-transformers
+faiss-cpu
+rank-bm25
+google-genai
+python-dotenv
+streamlit
+numpy

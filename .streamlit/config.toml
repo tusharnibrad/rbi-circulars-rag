@@ -1,0 +1,6 @@
+[server]
+headless = true
+fileWatcherType = "none"   # avoids the torchvision import error and speeds up reloads
+
+[browser]
+gatherUsageStats = false   # no email / telemetry prompt

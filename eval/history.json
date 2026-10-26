@@ -1,0 +1,57 @@
+[
+  {
+    "label": "v1",
+    "mode": "bm25",
+    "no_annex": false,
+    "n": 40,
+    "hit@1": 0.675,
+    "hit@3": 0.825,
+    "hit@5": 0.85,
+    "mrr": 0.748,
+    "dochit@5": 1.0
+  },
+  {
+    "label": "v1",
+    "mode": "dense",
+    "no_annex": false,
+    "n": 40,
+    "hit@1": 0.55,
+    "hit@3": 0.85,
+    "hit@5": 0.925,
+    "mrr": 0.709,
+    "dochit@5": 1.0
+  },
+  {
+    "label": "v1",
+    "mode": "hybrid",
+    "no_annex": false,
+    "n": 40,
+    "hit@1": 0.6,
+    "hit@3": 0.9,
+    "hit@5": 0.975,
+    "mrr": 0.755,
+    "dochit@5": 1.0
+  },
+  {
+    "label": "v2_rerank",
+    "mode": "hybrid+rerank",
+    "no_annex": false,
+    "n": 40,
+    "hit@1": 0.775,
+    "hit@3": 0.925,
+    "hit@5": 0.975,
+    "mrr": 0.86,
+    "dochit@5": 1.0
+  },
+  {
+    "label": "v3_current",
+    "mode": "hybrid+rerank+current",
+    "no_annex": false,
+    "n": 40,
+    "hit@1": 0.875,
+    "hit@3": 0.925,
+    "hit@5": 0.975,
+    "mrr": 0.91,
+    "dochit@5": 1.0
+  }
+]

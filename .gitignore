@@ -1,0 +1,9 @@
+venv/
+.env
+__pycache__/
+*.pyc
+.DS_Store
+# Raw PDFs are public RBI documents; keep them out of git. The processed data and indexes
+# (about 3 MB) ARE committed so the deployed app starts without re-running the pipeline.
+data/raw_pdfs/
+eval/last_run.json

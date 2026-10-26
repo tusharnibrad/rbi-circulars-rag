@@ -1,0 +1,402 @@
+[
+  {
+    "id": "dl_cooling_min",
+    "category": "lookup",
+    "question": "What is the minimum cooling-off period for a digital loan?",
+    "gold_doc": "digital_lending_2025",
+    "must_contain": [
+      "not being less than one day"
+    ]
+  },
+  {
+    "id": "dl_dlg_cap",
+    "category": "number",
+    "question": "What is the maximum Default Loss Guarantee cover allowed on a loan portfolio?",
+    "gold_doc": "digital_lending_2025",
+    "must_contain": [
+      "five per cent of the total amount disbursed"
+    ]
+  },
+  {
+    "id": "dl_dlg_invoke",
+    "category": "number",
+    "question": "Within how many days of being overdue must a regulated entity invoke a DLG?",
+    "gold_doc": "digital_lending_2025",
+    "must_contain": [
+      "120 days"
+    ]
+  },
+  {
+    "id": "dl_dlg_forms",
+    "category": "lookup",
+    "question": "In what forms can a regulated entity accept a Default Loss Guarantee?",
+    "gold_doc": "digital_lending_2025",
+    "must_contain": [
+      "Bank Guarantee in favour of the RE"
+    ]
+  },
+  {
+    "id": "dl_data_india",
+    "category": "lookup",
+    "question": "Where must borrower data be stored in digital lending, and what happens if it is processed outside India?",
+    "gold_doc": "digital_lending_2025",
+    "must_contain": [
+      "within 24 hours of processing"
+    ]
+  },
+  {
+    "id": "dl_grievance",
+    "category": "lookup",
+    "question": "When can a digital lending borrower take a complaint to the RBI Complaint Management System?",
+    "gold_doc": "digital_lending_2025",
+    "must_contain": [
+      "within 30 days of receipt of complaint"
+    ]
+  },
+  {
+    "id": "dl_disburse",
+    "category": "lookup",
+    "question": "Can a digital loan be disbursed to the bank account of the lending service provider?",
+    "gold_doc": "digital_lending_2025",
+    "must_contain": [
+      "in no case, disbursal is made to a third-party account"
+    ]
+  },
+  {
+    "id": "dl_app_access",
+    "category": "lookup",
+    "question": "Which mobile phone resources are digital lending apps not allowed to access?",
+    "gold_doc": "digital_lending_2025",
+    "must_contain": [
+      "contact list, call logs"
+    ]
+  },
+  {
+    "id": "dl_dlg_provider",
+    "category": "lookup",
+    "question": "What kind of entity is eligible to provide a DLG?",
+    "gold_doc": "digital_lending_2025",
+    "must_contain": [
+      "incorporated as a company under the Companies Act, 2013"
+    ]
+  },
+  {
+    "id": "dl_cims",
+    "category": "lookup",
+    "question": "By what date had all digital lending apps to be reported on the CIMS portal?",
+    "gold_doc": "digital_lending_2025",
+    "must_contain": [
+      "completed by June 15, 2025"
+    ]
+  },
+  {
+    "id": "dl_lsp_fees",
+    "category": "lookup",
+    "question": "Can the lending service provider charge its fees directly from the borrower?",
+    "gold_doc": "digital_lending_2025",
+    "must_contain": [
+      "not charged to or collected from the borrowers separately by LSP"
+    ]
+  },
+  {
+    "id": "dl_credit_limit",
+    "category": "lookup",
+    "question": "Can a lender automatically increase a borrower's credit limit on a digital loan?",
+    "gold_doc": "digital_lending_2025",
+    "must_contain": [
+      "no automatic increase in credit limit"
+    ]
+  },
+  {
+    "id": "psl_edu_2025",
+    "category": "version",
+    "question": "What is the current loan limit for education loans to qualify as priority sector lending?",
+    "gold_doc": "psl_directions_2025",
+    "must_contain": [
+      "not exceeding ₹25 lakh"
+    ]
+  },
+  {
+    "id": "psl_edu_2020",
+    "category": "version",
+    "question": "What was the education loan limit under the 2020 Priority Sector Lending Master Directions?",
+    "gold_doc": "psl_master_direction_2020",
+    "must_contain": [
+      "not exceeding ₹ 20 lakh"
+    ]
+  },
+  {
+    "id": "psl_renew_2025",
+    "category": "version",
+    "question": "What is the current loan limit for renewable energy projects under priority sector lending?",
+    "gold_doc": "psl_directions_2025",
+    "must_contain": [
+      "₹35 crore"
+    ]
+  },
+  {
+    "id": "psl_renew_2020",
+    "category": "version",
+    "question": "What was the renewable energy loan limit in the 2020 Priority Sector Lending Master Directions?",
+    "gold_doc": "psl_master_direction_2020",
+    "must_contain": [
+      "₹30 crore"
+    ]
+  },
+  {
+    "id": "psl_weights",
+    "category": "number",
+    "question": "What weight is given to incremental priority sector credit in districts with low per capita PSL credit?",
+    "gold_doc": "psl_directions_2025",
+    "must_contain": [
+      "higher weight (125%)"
+    ]
+  },
+  {
+    "id": "psl_service_chg",
+    "category": "version",
+    "question": "Up to what loan amount can service charges not be levied on priority sector loans under the current Directions?",
+    "gold_doc": "psl_directions_2025",
+    "must_contain": [
+      "levied on priority sector loans up to ₹50,000"
+    ]
+  },
+  {
+    "id": "psl_service_chg_2020",
+    "category": "version",
+    "question": "What was the loan amount up to which no service charges could be levied on priority sector loans under the 2020 Master Directions?",
+    "gold_doc": "psl_master_direction_2020",
+    "must_contain": [
+      "₹25,000"
+    ]
+  },
+  {
+    "id": "psl_onlend_cap",
+    "category": "number",
+    "question": "What is the overall cap on bank credit to NBFCs for on-lending as a share of a bank's priority sector lending?",
+    "gold_doc": "psl_directions_2025",
+    "must_contain": [
+      "up to an overall limit of 5%"
+    ]
+  },
+  {
+    "id": "psl_securit_2020",
+    "category": "version",
+    "question": "What interest rate cap applied to investments in securitisation notes under the 2020 Priority Sector Lending Master Directions?",
+    "gold_doc": "psl_master_direction_2020",
+    "must_contain": [
+      "MCLR + 10%"
+    ]
+  },
+  {
+    "id": "psl_ibpc_ucb",
+    "category": "version",
+    "question": "Under the 2020 Priority Sector Lending Master Directions, can urban co-operative banks use Inter Bank Participation Certificates for priority sector classification?",
+    "gold_doc": "psl_master_direction_2020",
+    "must_contain": [
+      "not applicable to UCBs"
+    ]
+  },
+  {
+    "id": "psl_micro",
+    "category": "number",
+    "question": "What is the priority sector sub-target for micro enterprises as a percentage of ANBC?",
+    "gold_doc": "psl_directions_2025",
+    "must_contain": [
+      "7.5 per cent"
+    ]
+  },
+  {
+    "id": "psl_ag_target",
+    "category": "number",
+    "question": "What is the agriculture sub-target under priority sector lending for domestic commercial banks?",
+    "gold_doc": "psl_directions_2025",
+    "must_contain": [
+      "Agriculture 18 per cent"
+    ]
+  },
+  {
+    "id": "kyc_updation_comm",
+    "category": "bank_type",
+    "question": "How often must a commercial bank carry out periodic KYC updation for high-risk customers?",
+    "gold_doc": "kyc_commercial_banks_2025",
+    "must_contain": [
+      "once in every two years for high-risk customers"
+    ]
+  },
+  {
+    "id": "kyc_updation_sfb",
+    "category": "bank_type",
+    "question": "How often must a small finance bank carry out periodic KYC updation for high-risk customers?",
+    "gold_doc": "kyc_small_finance_banks_2025",
+    "must_contain": [
+      "once in every two years for high-risk customers"
+    ]
+  },
+  {
+    "id": "kyc_walkin",
+    "category": "lookup",
+    "question": "What is a walk-in customer under the KYC Directions for commercial banks?",
+    "gold_doc": "kyc_commercial_banks_2025",
+    "must_contain": [
+      "does not have an account-based relationship with the bank"
+    ]
+  },
+  {
+    "id": "kyc_ckycr_10d",
+    "category": "number",
+    "question": "Within how many days must a commercial bank upload KYC records to CKYCR after an account-based relationship starts?",
+    "gold_doc": "kyc_commercial_banks_2025",
+    "must_contain": [
+      "within 10 days of commencement"
+    ]
+  },
+  {
+    "id": "kyc_small_acct",
+    "category": "number",
+    "question": "What is the limit on total credits in a financial year for a small account at a commercial bank?",
+    "gold_doc": "kyc_commercial_banks_2025",
+    "must_contain": [
+      "aggregate of all credits in a financial year does not exceed Rupees One Lakh"
+    ]
+  },
+  {
+    "id": "kyc_otp_loans",
+    "category": "number",
+    "question": "What is the annual limit on term loans sanctioned in accounts opened using OTP based e-KYC at a commercial bank?",
+    "gold_doc": "kyc_commercial_banks_2025",
+    "must_contain": [
+      "₹60,000 in a year"
+    ]
+  },
+  {
+    "id": "kyc_otp_year",
+    "category": "lookup",
+    "question": "For how long can an OTP based e-KYC account at a commercial bank operate without further identification?",
+    "gold_doc": "kyc_commercial_banks_2025",
+    "must_contain": [
+      "more than one year"
+    ]
+  },
+  {
+    "id": "kyc_pep",
+    "category": "lookup",
+    "question": "Who counts as a politically exposed person under the KYC Directions for commercial banks?",
+    "gold_doc": "kyc_commercial_banks_2025",
+    "must_contain": [
+      "entrusted with prominent public functions by a foreign country"
+    ]
+  },
+  {
+    "id": "kyc_desig_dir",
+    "category": "lookup",
+    "question": "Who is a Designated Director under the KYC Directions for commercial banks?",
+    "gold_doc": "kyc_commercial_banks_2025",
+    "must_contain": [
+      "Managing Director or a whole-time Director"
+    ]
+  },
+  {
+    "id": "kyc_princ_off",
+    "category": "lookup",
+    "question": "Who is the Principal Officer under the KYC Directions for commercial banks?",
+    "gold_doc": "kyc_commercial_banks_2025",
+    "must_contain": [
+      "nominated officer at the management level"
+    ]
+  },
+  {
+    "id": "kyc_vcip_sfb",
+    "category": "bank_type",
+    "question": "What are the V-CIP infrastructure requirements for a small finance bank?",
+    "gold_doc": "kyc_small_finance_banks_2025",
+    "must_contain": [
+      "V-CIP Infrastructure"
+    ]
+  },
+  {
+    "id": "kyc_vcip_store",
+    "category": "bank_type",
+    "question": "Where must a commercial bank store V-CIP data and recordings?",
+    "gold_doc": "kyc_commercial_banks_2025",
+    "must_contain": [
+      "store the entire data and recordings of V-CIP"
+    ]
+  },
+  {
+    "id": "kyc_50k",
+    "category": "number",
+    "question": "Above what transaction amount must a commercial bank do due diligence for occasional transactions by walk-in customers?",
+    "gold_doc": "kyc_commercial_banks_2025",
+    "must_contain": [
+      "equal to or exceeding ₹50,000"
+    ]
+  },
+  {
+    "id": "kyc_xml_sfb",
+    "category": "bank_type",
+    "question": "How old can an Aadhaar XML file or QR code be for V-CIP at a small finance bank?",
+    "gold_doc": "kyc_small_finance_banks_2025",
+    "must_contain": [
+      "not older than three working days"
+    ]
+  },
+  {
+    "id": "kyc_company_sfb",
+    "category": "bank_type",
+    "question": "What documents must a small finance bank obtain to open an account for a company?",
+    "gold_doc": "kyc_small_finance_banks_2025",
+    "must_contain": [
+      "Certificate of incorporation"
+    ]
+  },
+  {
+    "id": "kyc_ckycr_7d",
+    "category": "number",
+    "question": "Within how many days must a commercial bank send updated customer information to CKYCR?",
+    "gold_doc": "kyc_commercial_banks_2025",
+    "must_contain": [
+      "within seven days"
+    ]
+  },
+  {
+    "id": "neg_france",
+    "category": "unanswerable",
+    "question": "What is the capital of France?",
+    "gold_doc": null,
+    "must_contain": [],
+    "expect_refusal": true
+  },
+  {
+    "id": "neg_governor",
+    "category": "unanswerable",
+    "question": "Who is the current Governor of the Reserve Bank of India?",
+    "gold_doc": null,
+    "must_contain": [],
+    "expect_refusal": true
+  },
+  {
+    "id": "neg_gst",
+    "category": "unanswerable",
+    "question": "What is the GST rate on bank service charges?",
+    "gold_doc": null,
+    "must_contain": [],
+    "expect_refusal": true
+  },
+  {
+    "id": "neg_sbi_home",
+    "category": "unanswerable",
+    "question": "How do I apply for a home loan at SBI?",
+    "gold_doc": null,
+    "must_contain": [],
+    "expect_refusal": true
+  },
+  {
+    "id": "neg_retail_direct",
+    "category": "unanswerable",
+    "question": "What is the interest rate on RBI Retail Direct bonds?",
+    "gold_doc": null,
+    "must_contain": [],
+    "expect_refusal": true
+  }
+]
