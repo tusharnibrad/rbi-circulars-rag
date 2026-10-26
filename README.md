@@ -3,11 +3,12 @@
 Ask questions about RBI regulations (KYC, Digital Lending, Priority Sector Lending) and get an answer
 that **cites the exact passages** it used, and **flags withdrawn documents**.
 
-**Live demo:** _TODO: paste your Streamlit Community Cloud link here (https://....streamlit.app)_
+**Live demo:** https://rbi-circulars-rag.streamlit.app/
 
 _Free-tier note: the app sleeps after 12 hours without visitors and wakes in about a minute. Answers depend on Google's free Gemini quota, so it can occasionally be busy._
 
-![demo](docs/demo.gif)  <!-- TODO: record a short GIF of one question, save as docs/demo.gif -->
+![answer](docs/demo1.png)
+![sources](docs/demo2.png)
 
 ## Why this project
 Regulatory text is hard for generic RAG: clauses are numbered, old and new versions of the same rule
@@ -64,7 +65,7 @@ Design decisions
 - Excluding annex chunks changed nothing (tried, no effect).
 - No scanned PDFs are in the current corpus: the OCR fallback exists and runs on pages with almost no text layer
   (2 such pages here) but has not been evaluated on real scans.
-- Latency on a laptop CPU: 9.1 s and 5.7 s end to end for two measured questions (search 4.6 s and 1.9 s, Gemini 4.2 s and 3.8 s). Only two measurements.
+- Latency, end to end: 9.1 s and 5.7 s on a laptop CPU, 6.5 s and 2.9 s on Streamlit Community Cloud (four measurements, mostly Gemini time).
 
 ## Run locally
 ```bash
