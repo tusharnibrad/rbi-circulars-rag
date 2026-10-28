@@ -28,9 +28,8 @@ small finance banks). The system is built and measured around those problems.
 Hit@k = a gold chunk (right document and the key phrase) is in the top k. MRR = mean reciprocal rank.
 
 **How to read these numbers honestly**
-- - The 40 questions were drafted with an AI assistant from the documents, then checked automatically so each has a gold chunk. Small n: one question = 2.5 points.
-- Version-aware ordering was designed after looking at failures on this same set, so its gain may be optimistic.
-   No separate held-out set yet. All numbers above are on my own 40 questions, so they may be optimistic. A held-out set is the next step.
+- The 40 questions were drafted with an AI assistant from the documents, then checked automatically so each has a gold chunk. Small n: one question = 2.5 points.
+- Version-aware ordering was designed after looking at failures on this same set, so its gain may be optimistic. There is no separate held-out set yet; building one is the next step.
 - One question (`psl_ibpc_ucb`) was ambiguous in the first run and was reworded to name the 2020 directions.
 - Two of the three remaining misses return a chunk that also answers the question (strict single-chunk labels).
 
