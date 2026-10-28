@@ -12,6 +12,7 @@ Run from the project root:
   python eval\\run_eval.py --modes hybrid --no-annex --label hybrid_no_annex
   python eval\\run_eval.py --modes hybrid --rerank --label hybrid_rerank
   python eval\\run_eval.py --modes hybrid --rerank --prefer-current --label rerank_current
+  python eval\\run_eval.py --modes hybrid --rerank --prefer-current --questions eval\\heldout.json --label heldout
 Results are appended to eval/history.json so you can show "baseline -> improved" in the README.
 """
 import argparse
@@ -24,7 +25,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 from retrieve import Retriever  # noqa: E402
 
-QUESTIONS = Path("eval/questions.json")
+DEFAULT_QUESTIONS = "eval/questions.json"
 HISTORY = Path("eval/history.json")
 K_MAX = 10
 
@@ -76,17 +77,23 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--modes", nargs="+", default=["bm25", "dense", "hybrid"])
     ap.add_argument("--label", default="run")
+    ap.add_argument("--questions", default=DEFAULT_QUESTIONS, help="e.g. eval/heldout.json (your own questions)")
     ap.add_argument("--no-annex", action="store_true")
     ap.add_argument("--rerank", action="store_true")
     ap.add_argument("--prefer-current", action="store_true")
     ap.add_argument("--show-failures", type=int, default=6)
     a = ap.parse_args()
 
-    all_q = json.loads(QUESTIONS.read_text(encoding="utf-8"))
+    all_q = json.loads(Path(a.questions).read_text(encoding="utf-8"))
     answerable = [q for q in all_q if q["gold_doc"]]
     print(f"{len(answerable)} answerable questions ({len(all_q) - len(answerable)} unanswerable are tested in answer.py)")
 
     retriever = Retriever()
+    # A typo in gold_doc / must_contain would silently count as a miss. Catch it up front.
+    missing = [q["id"] for q in answerable if not any(is_gold(c, q) for c in retriever.chunks)]
+    if missing:
+        print(f"WARNING: no chunk matches gold_doc + must_contain for {missing}\n"
+              "         fix those questions first, otherwise they always count as misses.\n")
     history = json.loads(HISTORY.read_text()) if HISTORY.exists() else []
 
     print(f"\n{'mode':20} {'Hit@1':>7} {'Hit@3':>7} {'Hit@5':>7} {'MRR':>7} {'DocHit@5':>9}")
@@ -97,7 +104,7 @@ def main():
         s = summarize(rows)
         per_mode[name] = rows
         print(f"{name:20} {s['hit@1']:7.1%} {s['hit@3']:7.1%} {s['hit@5']:7.1%} {s['mrr']:7.3f} {s['dochit@5']:9.1%}")
-        history.append({"label": a.label, "mode": name, "no_annex": a.no_annex, **s})
+        history.append({"label": a.label, "questions": a.questions, "mode": name, "no_annex": a.no_annex, **s})
 
     best = list(per_mode)[-1]
     print(f"\nBy category ({best}):  Hit@3")
