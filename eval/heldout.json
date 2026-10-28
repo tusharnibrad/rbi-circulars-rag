@@ -1,5 +1,0 @@
-[
-  {"id": "t_1", "category": "lookup", "question": "What does the lender have to publish on its website about digital lending apps?", "gold_doc": "digital_lending_2025", "must_contain": ["Details of all of its digital lending products"]},
-  {"id": "t_2", "category": "bank_type", "question": "Who has to approve the policy for cross-border correspondent banking at a small finance bank?", "gold_doc": "kyc_small_finance_banks_2025", "must_contain": ["approved by its Boards, or by a committee headed by the Chairman"]},
-  {"id": "t_3", "category": "number", "question": "How often must a commercial bank check the UNSCR 1718 sanctions list?", "gold_doc": "kyc_commercial_banks_2025", "must_contain": ["shall verify every day"]}
-]

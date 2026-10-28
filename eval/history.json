@@ -53,29 +53,5 @@
     "hit@5": 0.975,
     "mrr": 0.91,
     "dochit@5": 1.0
-  },
-  {
-    "label": "heldout",
-    "questions": "eval\\heldout.json",
-    "mode": "hybrid+rerank+current",
-    "no_annex": false,
-    "n": 1,
-    "hit@1": 0.0,
-    "hit@3": 0.0,
-    "hit@5": 0.0,
-    "mrr": 0.0,
-    "dochit@5": 0.0
-  },
-  {
-    "label": "setup_test",
-    "questions": "eval\\heldout.json",
-    "mode": "hybrid+rerank+current",
-    "no_annex": false,
-    "n": 3,
-    "hit@1": 0.667,
-    "hit@3": 0.667,
-    "hit@5": 0.667,
-    "mrr": 0.714,
-    "dochit@5": 1.0
   }
 ]
